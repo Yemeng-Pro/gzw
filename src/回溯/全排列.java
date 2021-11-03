@@ -15,7 +15,6 @@ public class 全排列 {
     }
 
 
-
     private List<List<Integer>> result = new ArrayList<>();
     public List<List<Integer>> permute(int[] nums) {
         List<Integer> path = new ArrayList<>();

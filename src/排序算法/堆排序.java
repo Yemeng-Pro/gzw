@@ -32,6 +32,7 @@ public class 堆排序 {
             adjustHeap(nums, i, nums.length-1);
         }
     }
+    //大顶堆
     public void adjustHeap(int[] nums, int begin, int length) {
         while (true) {
             int tempMax = begin;

@@ -12,6 +12,7 @@ import java.util.BitSet;
  */
 
 public class 第一个只出现一次的字符位置 {
+
     public static int FirstNotRepeatingChar(String str){
         int[] cnts = new int[128];
         for (int i = 0; i < str.length(); i++) {
@@ -42,9 +43,9 @@ public class 第一个只出现一次的字符位置 {
     }
 
     public static void main(String[] args) {
-        String a = "abadd";
+        String a = "abaccdeff";
         int b = FirstNotRepeatingChar2(a);
-        System.out.println(b);
+        System.out.println(a.charAt(b));
 
     }
 }

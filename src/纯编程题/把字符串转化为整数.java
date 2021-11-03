@@ -7,8 +7,8 @@ import javax.crypto.interfaces.PBEKey;
 public class 把字符串转化为整数 {
     @Test
     public void test() {
-        String str = " -42a22";
-        System.out.println(strToInt(str));
+        String str = " -42bca";
+        System.out.println(strToInt2(str));
     }
 
 

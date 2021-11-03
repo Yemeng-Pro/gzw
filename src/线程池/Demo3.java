@@ -19,7 +19,7 @@ public class Demo3 {
         for (int i = 0; i < 10; i++) {
             threadPool.execute(()->{
                 try {
-                    TimeUnit.SECONDS.sleep(10000);
+                    TimeUnit.SECONDS.sleep(100);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -163,7 +163,7 @@ class BlockingQueue<T> {
             }
             // 获取任务并唤醒生产者线程
             T task = blockingQueue.removeFirst();
-            fullQueue.signalAll();
+            fullQueue.signal();
             return task;
         } finally {
             lock.unlock();
@@ -211,7 +211,7 @@ class BlockingQueue<T> {
             }
             blockingQueue.add(task);
             // 唤醒等待的消费者
-            emptyQueue.signalAll();
+            emptyQueue.signal();
         } finally {
             lock.unlock();
         }

@@ -11,9 +11,9 @@ public class 寻找旋转排序数组的最小值 {
         while (low <= high) {
             int mid = (low+high)/2;
             // 特殊处理low==high的情况
-            if (low == high) {
-                return nums[mid];
-            }
+//            if (low == high) {
+//                return nums[mid];
+//            }
             //先处理命中情况
             if ((mid != 0 && nums[mid]<nums[mid-1])
                     ||(mid == 0 && nums[mid]<nums[high])) {

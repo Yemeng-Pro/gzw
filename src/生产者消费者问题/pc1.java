@@ -37,7 +37,7 @@ class Data { // 数字 资源类
         while (number != 0) { //0
 // 等待
             this.wait();
-            Thread.sleep(100000000);
+            Thread.sleep(1000);
         }
         number++;
         System.out.println(Thread.currentThread().getName() + "=>" + number);

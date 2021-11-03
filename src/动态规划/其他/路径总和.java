@@ -44,35 +44,35 @@ public class 路径总和 {
 //        return count;
 //    }
 //    // 返回以root为上端点的路径的所有可能的⻓度（key）对应的路径的个数（value）
-//    private Map<Integer, Integer> dfs(TreeNode root, int sum) {
-//        if (root == null) return new HashMap<>();
-//        Map<Integer, Integer> leftValues = dfs(root.left, sum);
-//        Map<Integer, Integer> rightValues = dfs(root.right, sum);
-//        Map<Integer, Integer> rootValues = new HashMap<>();
-//        rootValues.put(root.val, 1);
-//        for (Map.Entry<Integer, Integer> entry : leftValues.entrySet()) {
-//            int newKey = entry.getKey()+root.val;
-//            int newValue = entry.getValue();
-//            if (rootValues.containsKey(newKey)) {
-//                newValue += rootValues.get(newKey);
-//            }
-//            rootValues.put(newKey, newValue);
-//        }
-//        for (Map.Entry<Integer, Integer> entry : rightValues.entrySet()) {
-//            int newKey = entry.getKey() + root.val;
-//            int newValue = entry.getValue();
-//            if (rootValues.containsKey(newKey)) {
-//                newValue += rootValues.get(newKey);
-//            }
-//            rootValues.put(newKey, newValue);
-//        }
-//        for (Map.Entry<Integer, Integer> entry : rootValues.entrySet()) {
-//            if (entry.getKey() == sum) {
-//                count += entry.getValue();
-//            }
-//        }
-//        return rootValues;
-//    }
+    private Map<Integer, Integer> dfs(TreeNode root, int sum) {
+        if (root == null) return new HashMap<>();
+        Map<Integer, Integer> leftValues = dfs(root.left, sum);
+        Map<Integer, Integer> rightValues = dfs(root.right, sum);
+        Map<Integer, Integer> rootValues = new HashMap<>();
+        rootValues.put(root.val, 1);
+        for (Map.Entry<Integer, Integer> entry : leftValues.entrySet()) {
+            int newKey = entry.getKey()+root.val;
+            int newValue = entry.getValue();
+            if (rootValues.containsKey(newKey)) {
+                newValue += rootValues.get(newKey);
+            }
+            rootValues.put(newKey, newValue);
+        }
+        for (Map.Entry<Integer, Integer> entry : rightValues.entrySet()) {
+            int newKey = entry.getKey() + root.val;
+            int newValue = entry.getValue();
+            if (rootValues.containsKey(newKey)) {
+                newValue += rootValues.get(newKey);
+            }
+            rootValues.put(newKey, newValue);
+        }
+        for (Map.Entry<Integer, Integer> entry : rootValues.entrySet()) {
+            if (entry.getKey() == sum) {
+                count += entry.getValue();
+            }
+        }
+        return rootValues;
+    }
 }
 
 

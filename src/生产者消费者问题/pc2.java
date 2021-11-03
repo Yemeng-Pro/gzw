@@ -77,7 +77,7 @@ class Data2{ // 数字 资源类
         }
     }
     //-1
-    public synchronized void decrement() throws InterruptedException {
+    public void decrement() throws InterruptedException {
         lock.lock();
         try {
             while (number==0){ // 1

@@ -13,6 +13,7 @@ public class 打开转盘锁 {
         System.out.println(a.equals(b));
         System.out.println(a);
         System.out.println(b);
+        System.out.println(3%4);
     }
     public int openLock(String[] deadends, String target) {
         HashSet<String> deadset = new HashSet();
@@ -69,4 +70,5 @@ public class 打开转盘锁 {
         }
         return newnodes;
     }
+
 }

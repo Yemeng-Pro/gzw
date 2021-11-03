@@ -6,5 +6,6 @@ package 大厂笔试题;
  */
 public class one {
     public static void main(String[] args) {
+
     }
 }
